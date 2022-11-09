@@ -1,0 +1,26 @@
+.my-button:not(:disabled):not(:disabled):active {
+    background-color: black;
+} 
+.search{
+    /* padding: 12px; */
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 600px;
+    /* float: right; */
+    border-radius: 20px;
+}
+.searchComp{
+    margin:auto;
+    width: 50%;
+}
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    float: left
+}

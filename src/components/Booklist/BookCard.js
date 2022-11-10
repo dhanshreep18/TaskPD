@@ -3,6 +3,7 @@ import "./bookcard.css"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ReactLoading from 'react-loading'
+import { Box, Grid } from '@mui/material';
 
 
 const BookCard = ({item}) => {
@@ -26,31 +27,16 @@ const BookCard = ({item}) => {
     {item.map((book)=>{
         return (
             <div style={{margin:'15px'}}>
-            <Card className="Card" style={{ width: '50rem', borderRadius:'0.5rem', backgroundColor:'#EAEDED'}}>
-                <Card.Body>
-                    <div className='box'>
-                        <div className='box CardDetails' style={{float:'right', margin:'10px'}}>
-                            <div className="CardTitle">
-                                <h4 style={{ color: "black", fontWeight:"bold"}}> {book.name}</h4>
-                                <div className="description">
-                                    <p className="mb-2 text-muted">Author: {book.author}</p>
-                                </div>
-                                <div className="description">
-                                    <p className="mb-2 text-muted"> {book.desc}</p>
-                                </div> 
-                            </div>
-                            <div className="box CardYear">
-                                <h6 style={{ color: "black" }}>{book.date}</h6>
-                            </div>
-                        </div>
-                        <div className='box CardImage' style={{float:'left', margin:'10px'}}>
-                            <img src={book.image} style={{height:'8rem', width:'6rem'}}></img>
-                        </div>
-                    </div>
-                    
-                    
-                </Card.Body>
-            </Card>
+            <figure class="snip1527">
+                <div class="image"><img src={book.image} alt="pr-sample23" /></div>
+                    <figcaption>
+                        <div class="date"><span class="day">29</span><span class="month">Oct</span></div>
+                        <h3>{book.name}</h3>
+                        <h6><b>Author: {book.author}</b></h6>
+                        <p>{book.desc}</p>
+                    </figcaption>
+                    <a href="#"></a>
+            </figure>
             </div>
             
         );

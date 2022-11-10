@@ -2,15 +2,22 @@ import React, { useState } from "react";
 import books from "./books";
 import BookCard from "./BookCard";
 import './booklist.css';
+import Buttons from "./Buttons";
+import { Box, Grid } from '@mui/material';
+
  
 const App = () => {
   const [item, setItem] = useState(books);
+  const [searchI, setSearchI] = useState(false);
+  const [filterI, setFilterI] = useState(false);
+  const menuItems = [...new Set(books.map((Val) => Val.subject))];
 
   const filterItem = (sub) => {
     const updatedItem = books.filter((currElem)=>{
       return currElem.subject === sub;
     });
     setItem(updatedItem);
+    setFilterI(true);
   }
 
   const [query, setQuery] = useState("");
@@ -67,7 +74,7 @@ const App = () => {
             <button className="my-button btn btn-warning" onClick={()=>searchList}><i className= "iconS" style={{padding:'10px'}} class="bi bi-search fa"></i></button>
           </div>
 
-          <div className="menu-tabs container">
+          {/* <div className="menu-tabs container">
             <div className="menu-tab d-flex justify-content-around">
               <button className="my-button btn btn-primary" onClick={()=>filterItem('science')}>Science</button>
               <button className="my-button btn btn-primary" onClick={()=>filterItem('chemistry')}>Chemistry</button>
@@ -75,11 +82,22 @@ const App = () => {
               <button className="my-button btn btn-primary" onClick={()=>filterItem('maths')}>Maths</button>
               <button className="my-button btn btn-primary" onClick={()=>filterItem('biology')}>Biology</button>
             </div>
+          </div> */}
+          
+          <div className="menu-tabs container">
+            <div className="menu-tab d-flex justify-content-around">
+              <Buttons
+                filterItem={filterItem}
+                setItem={setItem}
+                menuItems={menuItems}
+              />
+            </div>
+          </div>
 
-          </div>
           <div className="list">
-            <BookCard className="muUL" item={filteredBooks} />
+            <BookCard className="myUL" item={filteredBooks}/>
           </div>
+          
           
         </div>
       </div>

@@ -7,7 +7,7 @@ import logo from "../../assets/bookStack.png"
 const MyNavbar = () => {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar style={{backgroundColor:'#1D376F'}} variant="dark">
                 <Container>
                 <Navbar.Brand href="#home">
                     <img

@@ -16,10 +16,8 @@
     margin:auto;
     width: 50%;
 }
-.list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.myUL{
+    display: grid;
 }
 .box{
     float: left
